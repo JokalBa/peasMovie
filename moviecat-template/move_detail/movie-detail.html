@@ -1,0 +1,70 @@
+<div class="detail">
+    <h1>
+        {{items.title}}  {{items.original_title}} ({{items.year}})
+    </h1>
+    <div class="dt-info">
+        <div class="dti-i">
+            <img alt="" ng-src="{{items.images.large}}"/>
+        </div>
+        <div class="dti-w">
+            <p>
+                <strong>
+                    导演：
+                </strong>
+                <span ng-repeat='item in items.directors'>
+                    {{item.name}} {{$last?'':', '}}
+                </span>
+            </p>
+            <p>
+                <strong>
+                    主演：
+                </strong>
+                <span ng-repeat="role in items.casts">
+                    {{role.name}} {{$last?'':', '}}
+                </span>
+            </p>
+            <p>
+                <strong>
+                    类型：
+                </strong>
+                <span ng-repeat='style in items.genres'>
+                    {{style}}
+                </span>
+            </p>
+            <p>
+                <strong>
+                    国家：
+                </strong>
+                <span ng-repeat="country in items.countries">
+                    {{country}} {{$last?'':', '}}
+                </span>
+            </p>
+            <p>
+                <strong>
+                    评分：
+                </strong>
+                {{items.rating.average}}
+            </p>
+            <p>
+                <strong>
+                    时间：
+                </strong>
+                {{items.year}}
+            </p>
+            <p>
+                <strong>
+                    又名：
+                </strong>
+                <span ng-repeat='ak in items.aka'>
+                    {{ak}}
+                </span>
+            </p>
+        </div>
+    </div>
+    <h3>
+        剧情简介:
+    </h3>
+    <p style="color:#676767">
+        {{itmes.summary}}
+    </p>
+</div>

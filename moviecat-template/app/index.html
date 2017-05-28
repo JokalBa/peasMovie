@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>电影展示</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/wap.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+</head>
+
+<body ng-app="moviecat">
+    <div class="top">
+        <div class="header" ng-controller="mainController">
+            <a href="#/home_page"><h1>豆瓣电影</h1> <p>angularJs</p></a>
+            <div class="search">
+                <form ng-submit="search()">
+                    <input ng-model="query" class="my-input" type="text" placeholder="电影搜索">
+                    <button type='submit'>搜索</button>
+                </form>
+            </div>
+        </div>
+        <nav class="nav">
+            <ul>
+                <!--li中添加 active 类样式，显示焦点状态。-->
+                <li auto-active='active' ><a href="#/home_page">首页</a></li>
+                <li auto-active='active' ><a href="#/in_theaters">正在热映</a></li>
+                <li auto-active='active' ><a href="#/coming_soon">即将上映</a></li>
+                <li auto-active='active' ><a href="#/top250">Top250</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container">
+
+        <div ng-view></div>
+
+        <!--电影列表开始-->
+        
+        
+        <!--电影列表结束-->
+
+        <!-- 电影详情开始 -->
+
+
+        <!-- 电影详情结果 -->
+        <!--其他-->
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p>版权所有&copy; 前端与移动开发 火骑士空空(允许侵权)</p>
+        </div>
+    </footer>
+    <!-- 百各庄 -->
+    <script src="assets/js/prefixfree.min.js"></script>
+    <script src='../node_modules/angular/angular.js'></script>
+    <script src='../node_modules/angular-route/angular-route.js'></script>
+    <script src="../component/myService.js"></script>
+    <script src='../homePage/module.js'></script>
+    <script src='../movieList/module.js'></script>
+    <script src='../move_detail/module.js'></script>
+    <script src='../component/active.js'></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
